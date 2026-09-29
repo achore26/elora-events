@@ -1,0 +1,20 @@
+# Node
+node_modules/
+package.json
+package-lock.json
+
+# Temporary scripts
+*.py
+
+# Screenshots
+screenshot_*.png
+gallery_section_crop_*.png
+
+# Documents
+*.pdf
+
+# System files
+.DS_Store
+Videos/
+assets/videos/women_summit_reel.mp4
+assets/videos/podquest_reel.mp4
