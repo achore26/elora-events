@@ -908,58 +908,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ------------------------------------------------------------------------
-  // 13. Luxury Atmosphere Theme Switcher (Editorial White ⇄ African Brown)
+  // 13. Atmosphere Theme (Permanent Elegant White Default)
   // ------------------------------------------------------------------------
-  const themeToggleBtn = document.getElementById('theme-toggle');
-  const drawerThemeToggleBtn = document.getElementById('drawer-theme-toggle');
-
-  function applyTheme(theme) {
-    const isLight = (theme === 'light' || theme === 'white');
-    if (isLight) {
-      document.documentElement.setAttribute('data-theme', 'light');
-      document.body.classList.add('theme-light');
-      document.querySelectorAll('#theme-toggle .theme-btn-label, #drawer-theme-toggle .theme-btn-label').forEach(el => {
-        el.textContent = 'African Brown';
-      });
-      localStorage.setItem('elora_theme', 'light');
-    } else {
-      document.documentElement.removeAttribute('data-theme');
-      document.body.classList.remove('theme-light');
-      document.querySelectorAll('#theme-toggle .theme-btn-label, #drawer-theme-toggle .theme-btn-label').forEach(el => {
-        el.textContent = 'Editorial White';
-      });
-      localStorage.setItem('elora_theme', 'dark');
-    }
-  }
-
-  function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    if (currentTheme === 'light') {
-      applyTheme('dark');
-    } else {
-      applyTheme('light');
-    }
-  }
-
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', toggleTheme);
-  }
-  if (drawerThemeToggleBtn) {
-    drawerThemeToggleBtn.addEventListener('click', toggleTheme);
-  }
-
-  // Initialize Theme from URL parameter or localStorage
-  const themeParam = urlParams.get('theme');
-  const storedTheme = localStorage.getItem('elora_theme');
-
-  if (themeParam === 'white' || themeParam === 'light') {
-    applyTheme('light');
-  } else if (themeParam === 'dark' || themeParam === 'brown') {
-    applyTheme('dark');
-  } else if (storedTheme === 'light') {
-    applyTheme('light');
-  } else {
-    applyTheme('dark'); // Default African Brown
+  document.documentElement.setAttribute('data-theme', 'light');
+  document.body.classList.add('theme-light');
+  try {
+    localStorage.setItem('elora_theme', 'light');
+  } catch (e) {
+    // Ignore localStorage exceptions in private browsing
   }
 
   // ------------------------------------------------------------------------

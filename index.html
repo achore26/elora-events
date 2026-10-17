@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,16 +64,12 @@
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
 </head>
 
-<body>
+<body class="theme-light">
 
-  <!-- Ambient Decorative Atmosphere & Creative Background Watermark Emblems -->
+  <!-- Animated Elora Events Logo in Background (Only Animated Background) -->
   <div class="ambient-bg" aria-hidden="true">
-    <div class="ambient-pattern"></div>
     <div class="ambient-watermark-emblem"></div>
     <div class="ambient-watermark-emblem-bottom"></div>
-    <div class="glow-orb glow-orb-1"></div>
-    <div class="glow-orb glow-orb-2"></div>
-    <div class="glow-orb glow-orb-3"></div>
   </div>
 
   <!-- 1. Top Announcement Bar -->
@@ -113,8 +109,7 @@
   <header class="main-header">
     <div class="container nav-container">
       <a href="#" class="brand-logo-wrap" aria-label="Elora Events Home">
-        <img src="assets/images/logo_brand_white.png" alt="Elora Events" class="brand-header-logo logo-dark-theme" height="40">
-        <img src="assets/images/logo_brand_color.png" alt="Elora Events" class="brand-header-logo logo-light-theme" height="40">
+        <img src="assets/images/logo_brand_color.png" alt="Elora Events" class="brand-header-logo" height="40">
       </a>
 
       <!-- Desktop Nav Menu -->
@@ -131,27 +126,6 @@
 
       <!-- Nav Actions -->
       <div class="nav-actions">
-        <!-- Luxury Atmosphere Theme Switcher (Editorial White ⇄ African Brown) -->
-        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Atmosphere Theme" title="Toggle between African Brown and Editorial White">
-          <span class="theme-toggle-dot">
-            <svg class="icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="5"></circle>
-              <line x1="12" y1="1" x2="12" y2="3"></line>
-              <line x1="12" y1="21" x2="12" y2="23"></line>
-              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-              <line x1="1" y1="12" x2="3" y2="12"></line>
-              <line x1="21" y1="12" x2="23" y2="12"></line>
-              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-            </svg>
-            <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-          </span>
-          <span class="theme-btn-label">Editorial White</span>
-        </button>
-
         <a href="#contact" class="btn btn-primary" style="padding: 10px 22px; font-size: 0.875rem;">
           <span>Plan Your Event</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -176,8 +150,7 @@
     <div class="drawer-content">
       <div class="drawer-links">
         <div class="drawer-header-brand" style="margin-bottom: 24px;">
-          <img src="assets/images/logo_brand_white.png" alt="Elora Events" class="logo-dark-theme" style="max-height: 44px; width: auto;">
-          <img src="assets/images/logo_brand_color.png" alt="Elora Events" class="logo-light-theme" style="max-height: 44px; width: auto;">
+          <img src="assets/images/logo_brand_color.png" alt="Elora Events" style="max-height: 44px; width: auto;">
         </div>
         <a href="#hero" class="drawer-link-item">
           <span class="link-number">01</span>
@@ -259,30 +232,6 @@
               <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
             </svg>
           </a>
-        </div>
-
-        <!-- Drawer Theme Switcher -->
-        <div class="drawer-theme-row">
-          <span class="drawer-theme-label">Atmosphere Theme</span>
-          <button class="theme-toggle-btn" id="drawer-theme-toggle" aria-label="Toggle Atmosphere Theme">
-            <span class="theme-toggle-dot">
-              <svg class="icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-              </svg>
-              <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-              </svg>
-            </span>
-            <span class="theme-btn-label">Editorial White</span>
-          </button>
         </div>
       </div>
     </div>
@@ -388,8 +337,6 @@
 
     <!-- 6. About Us Section (Story & Founder Budgeting Spotlight) -->
     <section class="about-section" id="about">
-      <div class="about-watermark" aria-hidden="true"></div>
-
       <div class="container about-grid">
         <div class="about-text-content">
           <div class="eyebrow-badge">
@@ -584,8 +531,6 @@
 
         <!-- 360° Personalized Pipeline Box (The Elora Method from Page 4) -->
         <div class="personalized-pipeline-box" id="pipeline">
-          <div class="pipeline-watermark"></div>
-          
           <div class="pipeline-header">
             <div>
               <div class="eyebrow-badge" style="margin-bottom: 10px;">
@@ -643,8 +588,6 @@
 
     <!-- 8. Elora In Motion / Live Event Reels Showcase (Behind the Scenes) -->
     <section class="motion-section" id="reels">
-      <div class="motion-watermark" aria-hidden="true"></div>
-
       <div class="container">
         <div class="section-header-center">
           <div class="eyebrow-badge">
@@ -1812,8 +1755,7 @@
         <!-- Col 1: Brand Info -->
         <div class="footer-brand-col">
           <div class="brand-logo-wrap">
-            <img src="assets/images/logo_brand_white.png" alt="Elora Events" class="logo-dark-theme" style="max-height: 48px; width: auto;">
-            <img src="assets/images/logo_brand_color.png" alt="Elora Events" class="logo-light-theme" style="max-height: 48px; width: auto;">
+            <img src="assets/images/logo_brand_color.png" alt="Elora Events" style="max-height: 48px; width: auto;">
           </div>
           <p class="footer-brand-desc">
             Premier events planning and management agency based in Nairobi, Kenya. Bringing a radiant ray of light to intimate dining, corporate activations, and high-capacity festivals.

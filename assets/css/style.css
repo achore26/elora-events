@@ -7,6 +7,8 @@
    1. Root Variables & Design Tokens
    -------------------------------------------------------------------------- */
 :root {
+  color-scheme: light;
+
   /* Brand Color Palette (Extracted from Brand Assets & PDF) */
   --color-terracotta: #cb5727;
   --color-terracotta-light: #e06836;
@@ -23,25 +25,29 @@
   --color-cream: #fdfbf7;
   --color-cream-soft: #f7f3ea;
 
-  /* Dark Theme Surfaces (Luxury Agency Vibe) */
-  --bg-primary: #0e0d0c;
+  /* Default & Permanent Theme Surfaces (Editorial White / Cream) */
+  --bg-primary: #fdfbf7; /* Elegant Cream */
   --bg-secondary: #f6eedf; /* Soft Peach Cream */
-  --bg-surface: #1e1b19;
-  --bg-surface-elevated: #282420;
-  --bg-glass: rgba(24, 21, 19, 0.75);
-  --bg-glass-strong: rgba(20, 18, 16, 0.92);
+  --bg-surface: #f5f0e8;
+  --bg-surface-elevated: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.88);
+  --bg-glass-strong: rgba(255, 255, 255, 0.96);
 
-  /* Typography Colors */
-  --text-primary: #faf8f5;
-  --text-secondary: #c9c1b5;
-  --text-muted: #8e8578;
-  --text-highlight: #ff8c53;
+  /* High Contrast Luxury Typography */
+  --text-primary: #141210;
+  --text-secondary: #48413a;
+  --text-muted: #7d7367;
+  --text-highlight: #cb5727;
 
-  /* Borders & Dividers */
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-glass: rgba(203, 87, 39, 0.22);
-  --border-ochre: rgba(191, 141, 83, 0.25);
-  --border-hover: rgba(203, 87, 39, 0.55);
+  /* Warm Hairline Borders & Shadows */
+  --border-subtle: rgba(20, 18, 16, 0.08);
+  --border-glass: rgba(203, 87, 39, 0.28);
+  --border-ochre: rgba(191, 141, 83, 0.35);
+  --border-hover: rgba(203, 87, 39, 0.65);
+
+  --shadow-subtle: 0 4px 20px rgba(30, 20, 10, 0.05);
+  --shadow-elevated: 0 16px 45px rgba(30, 20, 10, 0.08);
+  --shadow-orange-glow: 0 8px 30px rgba(203, 87, 39, 0.2);
 
   /* Typography Fonts */
   --font-heading: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -52,9 +58,6 @@
   --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-normal: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.25);
-  --shadow-elevated: 0 12px 35px rgba(0, 0, 0, 0.45);
-  --shadow-orange-glow: 0 8px 30px rgba(203, 87, 39, 0.3);
 
   /* Layout */
   --container-max: 1320px;
@@ -100,20 +103,14 @@ body.theme-light {
 }
 
 /* Light Theme Component Overrides */
-[data-theme="light"] .ambient-pattern,
-body.theme-light .ambient-pattern {
-  opacity: 0.045;
-  mix-blend-mode: multiply;
-}
-
 [data-theme="light"] .ambient-watermark-emblem,
 body.theme-light .ambient-watermark-emblem {
-  opacity: 0.05;
+  opacity: 0.08;
 }
 
 [data-theme="light"] .ambient-watermark-emblem-bottom,
 body.theme-light .ambient-watermark-emblem-bottom {
-  opacity: 0.04;
+  opacity: 0.06;
 }
 
 [data-theme="light"] .top-announcement,
@@ -368,10 +365,10 @@ body.theme-light .modal-close-btn {
    Logo Switching Rules (African Brown vs Editorial White)
    -------------------------------------------------------------------------- */
 .logo-dark-theme {
-  display: block !important;
+  display: none !important;
 }
 .logo-light-theme {
-  display: none !important;
+  display: block !important;
 }
 [data-theme="light"] .logo-dark-theme,
 body.theme-light .logo-dark-theme {
@@ -382,79 +379,10 @@ body.theme-light .logo-light-theme {
   display: block !important;
 }
 
-/* Theme Toggle Button */
-.theme-toggle-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-full);
-  font-family: var(--font-heading);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-}
-
-.theme-toggle-btn:hover {
-  border-color: var(--color-terracotta);
-  background: var(--bg-surface-elevated);
-  transform: translateY(-1px);
-}
-
-.theme-toggle-dot {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: var(--color-terracotta-soft);
-  color: var(--color-terracotta-light);
-  transition: transform var(--transition-fast);
-}
-
-.theme-toggle-btn:hover .theme-toggle-dot {
-  transform: rotate(30deg);
-}
-
-.icon-sun {
-  display: block;
-}
-.icon-moon {
-  display: none;
-}
-
-[data-theme="light"] .icon-sun,
-body.theme-light .icon-sun {
-  display: none;
-}
-[data-theme="light"] .icon-moon,
-body.theme-light .icon-moon {
-  display: block;
-}
-
-/* Drawer Theme Toggle Row */
+/* Theme Toggle Button & Drawer Controls (Disabled - Default White Only) */
+.theme-toggle-btn,
 .drawer-theme-row {
-  margin-top: 24px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border-subtle);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.drawer-theme-label {
-  font-size: 0.8125rem;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: 600;
+  display: none !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -516,7 +444,7 @@ ul, ol {
 }
 
 /* --------------------------------------------------------------------------
-   3. Ambient Decorative Elements & Creative Background Emblem
+   3. Animated Background Emblems (Only Background Graphics)
    -------------------------------------------------------------------------- */
 .ambient-bg {
   position: fixed;
@@ -526,18 +454,7 @@ ul, ol {
   overflow: hidden;
 }
 
-/* Geometric Moroccan/Islamic Lattice Overlay */
-.ambient-pattern {
-  position: absolute;
-  inset: 0;
-  background-image: url('../images/pattern_terracotta.png');
-  background-size: 800px auto;
-  background-repeat: repeat;
-  opacity: 0.035;
-  mix-blend-mode: luminosity;
-}
-
-/* Giant Floating Emblem Watermark in Background */
+/* Giant Floating & Rotating Emblem Watermarks */
 .ambient-watermark-emblem {
   position: absolute;
   width: 950px;
@@ -548,8 +465,8 @@ ul, ol {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.045;
-  filter: drop-shadow(0 0 80px rgba(203, 87, 39, 0.4));
+  opacity: 0.08;
+  filter: drop-shadow(0 0 60px rgba(203, 87, 39, 0.25));
   animation: floatEmblem 45s linear infinite;
   transform-origin: center;
 }
@@ -564,43 +481,10 @@ ul, ol {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.03;
+  opacity: 0.06;
+  filter: drop-shadow(0 0 70px rgba(191, 141, 83, 0.2));
   animation: floatEmblemReverse 60s linear infinite;
   transform-origin: center;
-}
-
-/* Ambient Radial Glow Orbs */
-.glow-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(120px);
-  pointer-events: none;
-  opacity: 0.22;
-}
-
-.glow-orb-1 {
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, var(--color-terracotta) 0%, transparent 70%);
-  top: 10%;
-  right: -10%;
-}
-
-.glow-orb-2 {
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, var(--color-ochre) 0%, transparent 70%);
-  bottom: 25%;
-  left: -15%;
-}
-
-.glow-orb-3 {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, var(--color-terracotta-dark) 0%, transparent 75%);
-  top: 60%;
-  right: 15%;
-  opacity: 0.15;
 }
 
 @keyframes floatEmblem {
@@ -1460,17 +1344,7 @@ ul, ol {
 }
 
 .about-watermark {
-  position: absolute;
-  right: -150px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 650px;
-  height: 650px;
-  background-image: url('../images/logo_icon_gold.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0.04;
-  pointer-events: none;
+  display: none !important;
 }
 
 .about-grid {
@@ -1789,16 +1663,7 @@ ul, ol {
 }
 
 .pipeline-watermark {
-  position: absolute;
-  top: -60px;
-  right: -60px;
-  width: 320px;
-  height: 320px;
-  background-image: url('../images/logo_icon_gold.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0.04;
-  pointer-events: none;
+  display: none !important;
 }
 
 .pipeline-header {
@@ -1866,17 +1731,7 @@ ul, ol {
 }
 
 .motion-watermark {
-  position: absolute;
-  width: 900px;
-  height: 900px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-image: url('../images/logo_icon_gold.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0.03;
-  pointer-events: none;
+  display: none !important;
 }
 
 .motion-reels-grid {
